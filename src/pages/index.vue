@@ -1,12 +1,8 @@
-<script setup lang="ts">
-import { RouterLink } from 'vue-router'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
-    <h1>Welcome to Vuejs Masterclass 2024</h1>
-    <p>This is the home page.</p>
-    <RouterLink :to="{ path: '/projects/1' }">View Projects</RouterLink>
+    <h1>Home Page</h1>
+    <RouterLink :to="{ name: '/projects/[id]', params: { id: 1 } }">Go to Project 1</RouterLink>
   </div>
 </template>
-
