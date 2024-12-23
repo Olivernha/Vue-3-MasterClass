@@ -10,7 +10,18 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [VueRouter(), vue(), vueJsx(), vueDevTools()],
+  plugins: [
+    VueRouter(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (element) => element.startsWith('iconify-icon'),
+        },
+      },
+    }),
+    vueJsx(),
+    vueDevTools(),
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
